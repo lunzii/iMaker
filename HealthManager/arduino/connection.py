@@ -7,7 +7,7 @@ Created on 13-6-29
 
 
 import serial
-import time
+from SimpleCV import Camera,HaarCascade
 
 PORT = '/dev/tty.usbmodem1431'
 BAUD = 9600
@@ -28,28 +28,52 @@ def read_sensor(param):
 
 
 def read_motion():
-    return read_sensor('m')
+    sensor = read_sensor('m')
+    sensor = bool(sensor.split(':')[1])
+    print sensor
+    cam = Camera()
+    haarcascade = HaarCascade("face")
+    image = cam.getImage().flipHorizontal().scale(0.5)
+    faces = image.findHaarFeatures(haarcascade)
+    print faces
+    if faces or sensor:
+        print True
+    else:
+        print False
 
 
 def read_temperature():
-    return read_sensor('t')
+    result = read_sensor('t').split(',')
+    humidity = result[0].split(':')[1]
+    temperature = result[1].split(':')[1]
+    print humidity
+    print temperature
+    return humidity,temperature
 
 
 def read_distance():
-    return read_sensor('d')
+    distance = read_sensor('d').split(':')[1]
+    print distance
+    return distance
 
 
 def read_dust():
-    return read_sensor('f')
+    dust = read_sensor('f').split(':')[1]
+    print dust
+    return dust
 
 
 def read_air():
-    return read_sensor('a')
+    air = read_sensor('a').split(':')[1]
+    print air
+    return air
 
 
 def read_light():
-    return read_sensor('l')
+    light = read_sensor('l').split(':')[1]
+    print light
+    return light
 
 
 if __name__ == '__main__':
-    read_light()
+    read_air()
