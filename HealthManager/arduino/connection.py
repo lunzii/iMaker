@@ -54,7 +54,10 @@ def read_temperature():
 def read_distance():
     distance = read_sensor('d').split(':')[1]
     print distance
-    return distance
+    if int(distance) < 10:
+        return True
+    else:
+        return False
 
 
 def read_dust():
@@ -76,4 +79,4 @@ def read_light():
 
 
 if __name__ == '__main__':
-    read_air()
+    read_distance()

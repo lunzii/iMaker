@@ -65,8 +65,8 @@ void read_distance(){
   }
   else {
     Serial.print("distance:");
-    Serial.print(distance);
-    Serial.println("cm");
+    Serial.println(distance);
+//    Serial.println("cm");
   }
   delay(500);
 }
