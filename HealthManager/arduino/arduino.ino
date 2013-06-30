@@ -65,8 +65,8 @@ void read_distance(){
   }
   else {
     Serial.print("distance:");
-    Serial.println(distance);
-//    Serial.println("cm");
+    Serial.print(distance);
+    Serial.println("cm");
   }
   delay(500);
 }
@@ -96,7 +96,11 @@ void read_light(){
 //connnection
 void handle_connect(){
   if(Serial.available() > 0){
+//    Serial.println("error:nothing");
     char inCase = Serial.read();
+//    Serial.print("character recieved: ");
+//    Serial.println(inCase);
+
     switch(inCase){
     case 'm':
       read_motioin();
@@ -116,8 +120,12 @@ void handle_connect(){
     case 'l':
       read_light();
       break;
+    default:
+      Serial.println("info:nothing");
+      break;
     }
     Serial.flush();
+//    delay(300);
   }
 }
 
@@ -132,13 +140,5 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly: 
-//  read_motioin();
-//  read_temperature();
-//  read_distance();
-//  read_fenchen();
-//  read_air();
-//  read_light();
   handle_connect();
-//  delay(300);
 }

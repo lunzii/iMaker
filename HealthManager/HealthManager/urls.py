@@ -1,6 +1,7 @@
 # -*- coding:utf-8 -*-
 
 from django.conf.urls import patterns, include, url
+from django.views.generic import TemplateView
 
 import settings
 
@@ -24,6 +25,7 @@ urlpatterns = patterns('',
 
     # --------------------health-----------------------
     url(r'^index/', views.index),
+    url(r'^base/', TemplateView.as_view(template_name='base.html')),
 
     #静态文件资源路径
     url(r'^%s/(?P<path>.*)$' % settings.STATIC_URL.replace('/',''), 'django.views.static.serve', {'document_root':settings.STATIC_ROOT}),
