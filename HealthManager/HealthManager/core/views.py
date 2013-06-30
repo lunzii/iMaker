@@ -5,12 +5,15 @@ Created on 13-6-29
 @author: Joys
 '''
 import datetime,httplib
+import os
 import urllib2
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.utils import simplejson
 
+from HealthManager import settings
 from HealthManager.core.models import Water,Sport
+from arduino import connection
 
 
 def index(request):
@@ -20,12 +23,13 @@ def index(request):
     # -----------------------获取 天气------------------------
     weather_info_dict = get_weather()
 
-
     # -------------获取 温度、湿度、空气质量、粉尘质量---------
-
+    humidity_val,temperature_val = connection.read_temperature()
+    dust_val = connection.read_dust()
+    air_val - connection.read_air()
 
     # -------------------------处理喝水逻辑------------------
-    cur_water_status = True
+    cur_water_status = connection.read_distance()
     cur_time = datetime.datetime.now()
     water_status_true = obj_water_all.filter(end_time=None).order_by('-start_time')
     if cur_water_status:
@@ -36,6 +40,7 @@ def index(request):
             seconds_w = (cur_time - start_time_val).seconds
             if seconds_w > 60 * 60:
                 # --- 提醒该喝水啦 ---
+                play_mp3(os.path.join(settings.MP3_FILE_ROOT, 'water.mp3'))
 
                 #已经提醒 本次结束， 重新计数
                 water_status_true.end_time = cur_time
@@ -55,7 +60,7 @@ def index(request):
 
 
     # -------------------------处理运动逻辑-------------------
-    cur_sport_status = True
+    cur_sport_status = connection.read_motion()
     cur_time = datetime.datetime.now()
     sport_status_true = obj_sport_all.filter(end_time=None).order_by('-start_time')
     if cur_sport_status:
@@ -69,13 +74,15 @@ def index(request):
                 # --- 判断时间段 ---
                 if cur_time.hour > 6 and cur_time.hour < 10:
                     #--- 来段体操 ---
-                    pass
+                    play_mp3(os.path.join(settings.MP3_FILE_ROOT, 'ticao.mp3'))
+
                 elif cur_time.hour >=10 and cur_time.hour < 12:
                     #--- 来段眼保健操 ---
-                    pass
+                    play_mp3(os.path.join(settings.MP3_FILE_ROOT, 'yanbaojiancao.mp3'))
+
                 elif cur_time.hour >= 14 and cur_time.hour <18:
                     #--- 需要伸展一下了 ---
-                    pass
+                    play_mp3(os.path.join(settings.MP3_FILE_ROOT, 'shenzhan.mp3'))
 
                 #已经提醒 本次结束， 重新计数
                 sport_status_true.end_time = cur_time
@@ -110,8 +117,7 @@ def index(request):
             # 人不再，也没有记录 忽略
             pass
 
-    return render_to_response('index.html',{},
-                              context_instance=RequestContext(request))
+    return render_to_response('index.html',{'weather_info_dict':weather_info_dict})
 '''
 获取天气情况
 '''
@@ -132,3 +138,18 @@ def get_weather():
     weather_dict['img_url'] = 'http://m.weather.com.cn/img/c' + img_num + '.gif'
 
     return weather_dict
+
+'''
+MP3
+'''
+def play_mp3(mp3_name):
+    import pygame,sys
+    pygame.init()
+    pygame.mixer.init()
+    screen=pygame.display.set_mode([640,480])
+    pygame.mixer.music.load(mp3_name)
+    pygame.mixer.music.play()
+    # while 1:
+    #     for event in pygame.event.get():
+    #         if event.type==pygame.QUIT:
+    #             sys.exit()

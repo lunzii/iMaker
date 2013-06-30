@@ -52,6 +52,13 @@ ADMIN_MEDIA_PREFIX = '/static/admin/'
 RES_ROOT = os.path.join(os.path.dirname(__file__), 'res')
 RES_URL = '/res/'
 
+TEMPLATE_DIRS = (
+    os.path.join(os.path.dirname(__file__), 'templates')
+)
+
+LOAL_DATA_ROOT = 'E:/pro-maker/maker/HealthManager/HealthManager/'
+MP3_FILE_ROOT = os.path.join(LOAL_DATA_ROOT, 'static/mp3/')
+
 #
 # # Local time zone for this installation. Choices can be found here:
 # # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -134,9 +141,6 @@ ROOT_URLCONF = 'HealthManager.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'HealthManager.wsgi.application'
-
-import os
-TEMPLATE_DIRS = (os.path.join(os.path.dirname(__file__), '..', 'templates').replace('\\','/'),)
 
 INSTALLED_APPS = (
     'django.contrib.auth',
