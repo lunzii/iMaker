@@ -1,0 +1,68 @@
+<link rel="stylesheet" href="/static/nivo-slider/themes/light/light.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="/static/nivo-slider/nivo-slider.css" type="text/css" media="screen" />
+
+<div id="wrapper">
+    <div class="slider-wrapper theme-light">
+        <div id="slider" class="nivoSlider">
+            {% for slider in sliders %}
+                {% if slider.video == '' %}
+                <a href="{{ slider.link }}">
+                    <img src="{{ slider.image.url }}" alt="" title="{{ slider.title }}" />
+                </a>
+                {% else %}
+                    <a href="#" onclick="return hs.htmlExpand(this, {contentId:'hs-{{ slider.id }}'})">
+                        <img src="{{ slider.image.url }}" alt="" title="{{ slider.title }}" />
+                    </a>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% for slider in sliders %}
+    {% if slider.video != '' %}
+        <div id="hs-{{ slider.id }}" class="highslide-maincontent">
+            <a id="hs-{{ slider.id }}-video" href="{{ slider.video }}" style="display:block;width:1152px;height:648px;"></a>
+        </div>
+    {% endif %}
+{% endfor %}
+
+<!-- nivoslider -->
+<script type="text/javascript" src="/static/nivo-slider/jquery.nivo.slider.js"></script>
+<!-- highslide -->
+<script src="/media/highslide-4.1.13/highslide-full.packed.js" type="text/javascript"></script>
+<link href="/media/highslide-4.1.13/highslide.css" rel="stylesheet">
+<link href="/media/highslide-4.1.13/highslide-ie6.css" rel="stylesheet">
+<!-- flowplayer -->
+<script type="text/javascript" src="/media/flowplayer-3.2.15/flowplayer-3.2.11.min.js"></script>
+<script type="text/javascript">
+    var swf_player = "/media/flowplayer-3.2.15/flowplayer-3.2.15.swf";
+    $(document).ready(function() {
+        $('#slider').nivoSlider({
+            randomStart: true,
+            pauseTime: 5000
+        });
+
+        //play slide video
+        hs.graphicsDir = '/media/highslide-4.1.13/graphics/';
+        hs.align = 'center';
+        hs.width = '1152';
+        hs.height = '648';
+        hs.transitions = ['expand', 'crossfade'];
+        hs.outlineType = null;
+        hs.fadeInOut = true;
+        hs.dimmingOpacity = 0.75;
+        hs.Expander.prototype.onAfterExpand = function (sender) {
+            var playerid = sender.contentId + '-video';
+            flowplayer(playerid, {
+                src:swf_player,
+                wmode:"transparent"
+            }, {
+                clip:{
+                    autoPlay:true,
+                    autoBuffering:true
+                }
+            });
+        };
+    });
+</script>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="/static/nivo-slider/themes/light/light.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/static/nivo-slider/nivo-slider.css" type="text/css" media="screen" />
+</head>
+<body>
+
+<div id="wrapper">
+    <div class="slider-wrapper theme-light">
+        <div id="slider" class="nivoSlider">
+            {% for slider in sliders %}
+                <a href="/res{{ slider.path }}">
+                    <img src="/res{{ slider.path }}" alt="" title="{{ slider.name }}" />
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<!-- nivoslider -->
+<script type="text/javascript" src="/static/nivo-slider/jquery.nivo.slider.js"></script>
+<!-- highslide -->
+<script src="/media/highslide-4.1.13/highslide-full.packed.js" type="text/javascript"></script>
+
+<script>
+    window.setInterval(timer_check, 5000);
+    function timer_check()
+    {
+        $.ajax({
+            url: '/page_timer_to_index/',
+            data: '',
+            success: function(result){
+                if(result!=''){
+                    window.location = result;
+                }
+            }
+        });
+    }
+</script>
+
+</body>
+</html>

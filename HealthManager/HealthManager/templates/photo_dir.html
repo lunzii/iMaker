@@ -1,0 +1,13 @@
+<div data-role="view" data-layout="overview-layout" id="overview-mine" data-title="我的照片">
+    <ul data-role="listview" data-style="inset" data-type="group">
+        {% for item in typelist %}
+            <li>
+                <ul>
+                    <li><a href="/photo_gallery/?device_id={{ device_id }}&type_id={{ item.id }}">
+                        <h2>{{ item.name }}</h2><img src="/media/kendoui/examples/content/mobile/overview/nairobi.jpg" /></a>
+                    </li>
+                </ul>
+            </li>
+        {% endfor %}
+    </ul>
+</div>

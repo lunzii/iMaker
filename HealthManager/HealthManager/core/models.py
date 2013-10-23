@@ -2,29 +2,76 @@
 '''
 Created on 13-6-29
 
-@author:
+@author:team
 '''
 
 from django.db import models
 
-
-class Water(models.Model):
-    start_time = models.DateTimeField(null=True,blank=True,verbose_name='开始时间')
-    end_time = models.DateTimeField(null=True,blank=True,verbose_name='结束时间')
-    status = models.CharField(null=True,blank=True,max_length=512,verbose_name='提醒状态')
-
-    class Meta:
-        verbose_name = '喝水提醒记录'
-        verbose_name_plural = '喝水提醒记录'
-        db_table = 'health_manager_water'
-
-class Sport(models.Model):
-    start_time = models.DateTimeField(null=True,blank=True,verbose_name='开始时间')
-    end_time = models.DateTimeField(null=True,blank=True,verbose_name='结束时间')
-    temp_time = models.DateTimeField(null=True,blank=True,verbose_name='临时时间')
-    status = models.CharField(null=True,blank=True,max_length=512,verbose_name='提醒状态')
+class ManagerDevice(models.Model):
+    name = models.CharField(null=True,blank=True,max_length=128,verbose_name='设备名称')
+    device_id = models.CharField(null=True,blank=True,max_length=128,db_index=True,verbose_name='设备唯一ID')
+    date = models.DateTimeField(null=True,blank=True,verbose_name='注册时间')
 
     class Meta:
-        verbose_name = '运动提醒记录'
-        verbose_name_plural = '运动提醒记录'
-        db_table = 'health_manager_sport'
+        verbose_name = '设备信息'
+        verbose_name_plural = '设备信息'
+        db_table = 'manager_device'
+
+class ManagerPhoto(models.Model):
+    device_folder_id = models.CharField(null=True,blank=True,max_length=128,db_index=True,verbose_name='设备唯一ID')
+    device_folder_name = models.CharField(null=True,blank=True,max_length=128,db_index=True,verbose_name='设备唯一ID')
+
+    type_folder_id = models.CharField(null=True,blank=True,max_length=128,verbose_name='类型文件夹ID')
+    type_folder_name = models.CharField(null=True,blank=True,max_length=128,verbose_name='类型文件夹名称')
+
+    small_name = models.CharField(null=True,blank=True,max_length=128,verbose_name='小照片名称')
+    name = models.CharField(null=True,blank=True,max_length=128,verbose_name='照片名称')
+    size = models.CharField(null=True,blank=True,max_length=128,verbose_name='照片大小')
+    area = models.CharField(null=True,blank=True,max_length=128,verbose_name='照片地区')
+    path = models.CharField(null=True,blank=True,max_length=128,verbose_name='存储地址')
+    date_time = models.CharField(null=True,blank=True,max_length=128,verbose_name='时间')
+
+    note = models.CharField(null=True,blank=True,max_length=128,verbose_name='任何描述')
+
+    class Meta:
+        verbose_name = '照片信息'
+        verbose_name_plural = '照片信息'
+        db_table = 'manager_photo'
+
+class ManagerVideo(models.Model):
+    device_folder_id = models.CharField(null=True,blank=True,max_length=128,db_index=True,verbose_name='设备唯一ID')
+    device_folder_name = models.CharField(null=True,blank=True,max_length=128,db_index=True,verbose_name='设备唯一ID')
+
+    type_folder_id = models.CharField(null=True,blank=True,max_length=128,verbose_name='类型文件夹ID')
+    type_folder_name = models.CharField(null=True,blank=True,max_length=128,verbose_name='类型文件夹名称')
+
+    name = models.CharField(null=True,blank=True,max_length=128,verbose_name='视频名称')
+    size = models.CharField(null=True,blank=True,max_length=128,verbose_name='视频大小')
+    area = models.CharField(null=True,blank=True,max_length=128,verbose_name='视频地区')
+    path = models.CharField(null=True,blank=True,max_length=128,verbose_name='存储地址')
+    date_time = models.CharField(null=True,blank=True,max_length=128,verbose_name='时间')
+
+    note = models.CharField(null=True,blank=True,max_length=128,verbose_name='任何描述')
+
+    class Meta:
+        verbose_name = '视频信息'
+        verbose_name_plural = '视频信息'
+        db_table = 'manager_video'
+
+class ManagerStatus(models.Model):
+    type = models.CharField(null=True,blank=True,max_length=128,verbose_name='类型')
+    status = models.CharField(null=True,blank=True,max_length=128,verbose_name='类型状态')
+
+    class Meta:
+        verbose_name = '类型状态'
+        verbose_name_plural = '类型状态'
+        db_table = 'manager_status'
+
+class ManagerDevice(models.Model):
+    device_id = models.CharField(null=True,blank=True,max_length=128,verbose_name='ID')
+    date = models.CharField(null=True,blank=True,max_length=128,verbose_name='日期')
+
+    class Meta:
+        verbose_name = '类型状态'
+        verbose_name_plural = '类型状态'
+        db_table = 'manager_status'

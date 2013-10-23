@@ -49,7 +49,7 @@ STATIC_ROOT = os.path.join(os.path.dirname(__file__), 'static')
 STATIC_URL = '/static/'
 ADMIN_MEDIA_PREFIX = '/static/admin/'
 
-RES_ROOT = os.path.join(os.path.dirname(__file__), 'res')
+RES_ROOT = '/home/pi/helper_img/'
 RES_URL = '/res/'
 
 TEMPLATE_DIRS = (
@@ -155,6 +155,8 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'manager',
     'HealthManager.core',
+    'arduino',
+    'slider',
 )
 
 # A sample logging configuration. The only tangible logging

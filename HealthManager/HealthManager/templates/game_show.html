@@ -1,0 +1,51 @@
+<div data-role="view" data-layout="overview-layout" id="overview-game" data-title="查看照片">
+    <div id="scrollview-container">
+        <div data-role="scrollview">
+            <div class="photo photo20"></div>
+        </div>
+    </div>
+    <a alt="gameOn" data-click="gameOnClick" data-role="button" style="display: block; margin: 2em; text-align: center;">开始</a>
+    <a alt="gameOff" data-click="gameOffClick" data-role="button" style="display: block; margin: 2em; text-align: center;">退出</a>
+</div>
+
+<style>
+    #overview-game .photo {
+    width: 277px;
+    margin: 20px 20px 7px;
+    height: 220px;
+    display: inline-block;
+    -webkit-background-size: auto 100%;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-transform: translatez(0);
+}
+
+    .photo20 {background-image: url("/media/kendoui/examples/chaojimali.jpg");}
+
+    #scrollview-container {
+    width:325px;
+    margin: 0 auto;
+    padding-bottom: 10px;
+    background: rgba(0,0,0,.1);
+    border: 1px solid rgba(0,0,0,.3);
+    border-width: 1px 0;
+    box-shadow: 0 1px 1px rgba(255,255,255,.3);
+}
+
+.km-flat #scrollview-container {
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+}
+</style>
+
+<style scoped>
+    .km-root .console {
+        background-color: transparent;
+        border: 0;
+        margin: 1.4em 1em;
+        overflow: hidden;
+        height: auto;
+    }
+</style>
