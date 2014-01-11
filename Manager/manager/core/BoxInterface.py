@@ -12,9 +12,8 @@ from django.views.decorators.csrf import csrf_exempt
 from manager import settings
 
 from manager.core.models import FreePicInfo
-from PIL import Image
-from PIL.ExifTags import TAGS
-from PIL import ExifTags
+# from PIL import Image
+# from PIL.ExifTags import TAGS
 
 """
 返回给盒子最后拷贝的时间。根据照片最后时间
@@ -117,19 +116,19 @@ def get_md5_str(file):
 """
 获取图片的exif信息
 """
-def get_exif_data(fname):
-    ret = {}
-    try:
-        img = Image.open(fname)
-        if hasattr(img, '_getexif'):
-            exifinfo = img._getexif()
-            if not exifinfo is None:
-                for tag, value in exifinfo.items():
-                    decoded = TAGS.get(tag, tag)
-                    ret[decoded] = value
-    except IOError:
-        print 'IOERROR ' + fname
-    return ret
+# def get_exif_data(fname):
+#     ret = {}
+#     try:
+#         img = Image.open(fname)
+#         if hasattr(img, '_getexif'):
+#             exifinfo = img._getexif()
+#             if not exifinfo is None:
+#                 for tag, value in exifinfo.items():
+#                     decoded = TAGS.get(tag, tag)
+#                     ret[decoded] = value
+#     except IOError:
+#         print 'IOERROR ' + fname
+#     return ret
 
 """
 解压文件到当前目录
