@@ -75,3 +75,25 @@ class ManagerDevice(models.Model):
         verbose_name = '类型状态'
         verbose_name_plural = '类型状态'
         db_table = 'manager_status'
+
+class FreePicInfo(models.Model):
+    box_id = models.CharField(null=True,blank=True,max_length=128,db_index=True,verbose_name='盒子唯一ID')
+    device_id = models.CharField(null=True,blank=True,max_length=128,db_index=True,verbose_name='设备唯一ID')
+
+    user_name = models.CharField(null=True,blank=True,max_length=128,verbose_name='用户名')
+    write_date = models.CharField(null=True,blank=True,max_length=128,verbose_name='写入数据时间')
+
+    pic_date = models.CharField(null=True,blank=True,max_length=128,verbose_name='图片日期')
+    pic_size = models.CharField(null=True,blank=True,max_length=128,verbose_name='图片大小')
+    pic_md5 = models.CharField(null=True,blank=True,max_length=128,verbose_name='图md5值')
+    pic_path = models.CharField(null=True,blank=True,max_length=128,verbose_name='图片存储路径')
+
+    pic_loc_ctr = models.CharField(null=True,blank=True,max_length=128,verbose_name='图片地区-国家')
+    pic_loc_p = models.CharField(null=True,blank=True,max_length=128,verbose_name='图片地区-省')
+    pic_loc_city = models.CharField(null=True,blank=True,max_length=128,verbose_name='图片地区-市')
+    pic_loc_area = models.CharField(null=True,blank=True,max_length=128,verbose_name='图片地区-详细地区')
+
+    pic_note = models.CharField(null=True,blank=True,max_length=128,verbose_name='图片描述')
+
+    class Meta:
+        db_table = 'free_pic_info'

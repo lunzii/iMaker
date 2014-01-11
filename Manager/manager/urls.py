@@ -7,7 +7,7 @@ import settings
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
-from manager.core import views
+from manager.core import views, BoxInterface as bi_views, AppInterface as ai_views
 from manager.mobile import views as mobile
 
 admin.autodiscover()
@@ -19,40 +19,13 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
 
 
-    # --------------------health-----------------------
-    # url(r'^index/', views.index),
-    #url(r'^$', views.index),
-    #url(r'^index/', TemplateView.as_view(template_name='base.html')),
-    #url(r'^insert_data_video/', views.insert_data_video),
-    #url(r'^insert_data_photo/', views.insert_data_video),
-    #url(r'^photo_dir/', views.photo_dir),
-    #url(r'^photo_gallery/', views.photo_gallery),
-    #url(r'^game_show/', TemplateView.as_view(template_name='game_show.html')),
-    #url(r'^game_show_mario/', TemplateView.as_view(template_name='game_show_mario.html')),
-    #url(r'^game_show_konglong/', TemplateView.as_view(template_name='game_show_konglong.html')),
-    #url(r'^do_file/', views.do_file),
-    #
-    #url(r'^power_timer/', views.power_timer),
-    #url(r'^android_power/', views.get_android_power),
-    #url(r'^iphone_power/', views.get_iphone_power),
-    #
-    #url(r'^play_photo/', views.play_photo),
-    #url(r'^display_photo/', views.display_photo),
-    #url(r'^stop_photo/', views.stop_photo),
-    #url(r'^end_photo/', views.end_photo),
-    #
-    #url(r'^play_game/', views.play_game),
-    #url(r'^stop_game/', views.stop_game),
-    #
-    #url(r'^play_photo/', views.play_photo),
-    #
-    #url(r'^start_power_timer/', views.start_power_timer),
-    #
-    #url(r'^page_timer_to_index/', views.page_timer_to_index),
-    #url(r'^page_timer_to_photo/', views.page_timer_to_photo),
-    #
-    #url(r'^get_battery_android/', views.get_battery_android),
-    #url(r'^get_battery_iphone/', views.get_battery_iphone),
+    # 处理盒子请求
+    url(r'^get_import_time/', bi_views.get_import_time),
+    url(r'^save_pic_to_server/', bi_views.save_pic_to_server),
+
+    # 处理APP请求
+    url(r'^get_pic_info/', ai_views.get_pic_info),
+    url(r'^delete_pic_info/', ai_views.delete_pic_info),
 
     #--------------------
     url(r'^m/$', mobile.index),

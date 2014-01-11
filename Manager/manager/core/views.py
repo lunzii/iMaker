@@ -15,7 +15,10 @@ from django.utils import simplejson
 from manager.core.models import ManagerVideo, ManagerPhoto, ManagerStatus, ManagerDevice
 
 def index(request):
-    return render_to_response('mobile.html')
+        return render_to_response('test.html')
+
+def ddddd(request):
+    return render_to_response('index.html')
 
 def m(request):
     template ='mobile.html'

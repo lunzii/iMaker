@@ -13,14 +13,13 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'manager.db',                      # Or path to database file if using sqlite3.
-        # The following settings are not used with sqlite3:
-        'USER': '',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'free',
+        'USER': 'root',
         'PASSWORD': '',
-        'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
-        'PORT': '',                      # Set to empty string for default.
-    }
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
+        }
 }
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
@@ -41,6 +40,7 @@ USE_TZ = True
 # LOAL_DATA_ROOT = '/Users/Shared/MELT/bugly/'
 # LOAL_DATA_ROOT = 'E:\\Develop\\bugly_data'
 
+PRO_ROOT = os.path.dirname(__file__)
 
 MEDIA_ROOT = os.path.join(os.path.dirname(__file__), 'media')
 MEDIA_URL = '/media/'
@@ -49,8 +49,10 @@ STATIC_ROOT = os.path.join(os.path.dirname(__file__), 'static')
 STATIC_URL = '/static/'
 ADMIN_MEDIA_PREFIX = '/static/admin/'
 
-RES_ROOT = '/home/pi/helper_img/'
+RES_ROOT = os.path.join(os.path.dirname(__file__), 'res')
 RES_URL = '/res/'
+
+SAVA_PIC_PATH = 'D:/sava_pic'
 
 TEMPLATE_DIRS = (
     os.path.join(os.path.dirname(__file__), 'templates')
