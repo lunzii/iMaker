@@ -27,9 +27,6 @@ urlpatterns = patterns('',
     url(r'^get_pic_info/', ai_views.get_pic_info),
     url(r'^delete_pic_info/', ai_views.delete_pic_info),
 
-    #--------------------
-    url(r'^m/$', mobile.index),
-
 
     #静态文件资源路径
     url(r'^%s/(?P<path>.*)$' % settings.STATIC_URL.replace('/',''), 'django.views.static.serve', {'document_root':settings.STATIC_ROOT}),
