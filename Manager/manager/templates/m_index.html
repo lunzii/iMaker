@@ -135,13 +135,17 @@
 
     $(document).ready(function(){
         $.ajax({
-            url: '/get_pic_info/?user_name=yaoyao&time=2014-11-1',
-            data: '',
+            url: '/get_pic_info/',
+            data: 'user_name=yaoyao&time=2014-11-1',
             success: function(result){
-                alert(result);
+{#                alert(result);#}
+                groupedData = result;
+                mobileListViewHeadersInit();
+            },
+            error:function(result){
+{#                alert(result);#}
             }
         });
-        mobileListViewHeadersInit();
     });
 </script>
 
