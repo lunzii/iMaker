@@ -33,3 +33,8 @@ nosetests.xml
 .mr.developer.cfg
 .project
 .pydevproject
+
+/iMage/iMage.xcodeproj/project.xcworkspace/xcuserdata/chenlunyao.xcuserdatad/UserInterfaceState.xcuserstate
+/Manager/.idea/dataSources.ids
+/Manager/.idea/dataSources.xml
+/Manager/.idea/workspace.xml
