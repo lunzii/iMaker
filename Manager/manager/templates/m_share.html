@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link href="/media/kendoui.complete/styles/kendo.common.min.css" rel="stylesheet" />
+    <link href="/media/kendoui.complete/styles/kendo.default.min.css" rel="stylesheet" />
+    <link href="/media/kendoui.complete/styles/kendo.mobile.all.min.css" rel="stylesheet" />
+    <script src="/media/kendoui.complete/js/jquery.min.js"></script>
+    <script src="/media/kendoui.complete/js/kendo.all.min.js"></script>
+</head>
+<body>
+    <div data-role="view" id="listview-headers" data-title="分享" data-transition="slide">
+        <header data-role="header">
+            <div data-role="navbar">
+{#                <a id="back-button" class="nav-button" data-align="left" href="#index" data-role="backbutton">精选</a>#}
+                <span data-role="view-title"></span>
+{#                <a data-align="right" data-role="button" href="http://www.google.com">选择</a>#}
+            </div>
+        </header>
+        <ul id="fixed-listview"></ul>
+    </div>
+
+<style scoped>
+.item-image {
+    width: 4em;
+    height: 4.4em;
+    margin: 0;
+    border: 1px solid rgba(0,0,0,.2);
+    -webkit-border-radius: 4em;
+    border-radius: 4em;
+    display: inline-block;
+    -webkit-background-size: auto 100%;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-transform: translatez(0);
+    vertical-align: middle;
+    float: left;
+}
+.km-content h3 {
+    font-size: 1.0em;
+    margin: 0;
+    margin-top: 10px;
+    margin-left: 5em;
+    padding: 0;
+    overflow: hidden;
+}
+.km-content p,.item-info {
+    margin: 0;
+   margin-left: 5em;
+    margin-bottom: 15px;
+}
+    .km-ios7 .km-listgroup .km-group-title, .km-ios7 .km-listgroupinset .km-group-title {
+    line-height: 2em;
+    border-top: 10px solid #FFFFFF;
+    border-bottom: 0px;
+}
+</style>
+
+<script type="text/x-kendo-template" id="body-template">
+    <a href="">
+        <span class="item-image" style="background-image: url(' #: url # ')"></span>
+        <h3> #: time # </h3>
+        <p class="item-info">${description}</p>
+    </a>
+</script>
+
+<script type="text/x-kendo-template" id="header-template">
+    <a class="item-title-main">#: value #</a>
+</script>
+
+<script>
+    var groupedData = [
+        { name: "vincentshen", time: "2013年11月26日", description: "深圳市南山区大梅沙", url: "/media/kendoui.complete/examples/content/mobile/listview/sashimi-salad.jpg"},
+        { name: "vincentshen", time: "2013年11月26日", description: "深圳市南山区大梅沙", url: "/media/kendoui.complete/examples/content/mobile/listview/seaweed-salad.jpg"},
+        { name: "yijunli", time: "2013年11月26日", description: "深圳市南山区大梅沙", url: "/media/kendoui.complete/examples/content/mobile/listview/edamame.jpg"},
+        { name: "Maguro", time: "2013年11月26日", description: "深圳市南山区大梅沙", url: "/media/kendoui.complete/examples/content/mobile/listview/maguro.jpg"},
+        { name: "Tekka Maki", time: "2013年11月26日", description: "深圳市南山区大梅沙", url: "/media/kendoui.complete/examples/content/mobile/listview/tekka-maki.jpg"},
+        { name: "yijunli", time: "2013年11月26日", description: "深圳市南山区大梅沙", url: "/media/kendoui.complete/examples/content/mobile/listview/california-rolls.jpg"}
+    ];
+
+    function mobileListViewHeadersInit() {
+        $("#fixed-listview").kendoMobileListView({
+            dataSource: kendo.data.DataSource.create({data: groupedData, group: {field:"name"} }),
+            template: $("#body-template").html(),
+            headerTemplate: $("#header-template").html(),
+            fixedHeaders: true
+        });
+    }
+
+    $(document).ready(function(){
+        mobileListViewHeadersInit();
+    });
+</script>
+
+<script>
+    var app = new kendo.mobile.Application(document.body);
+{#    var app = new kendo.mobile.Application(document.body,{skin:"flat"});#}
+</script>
+</body>
+</html>

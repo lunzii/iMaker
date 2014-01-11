@@ -14,3 +14,9 @@ def index(request):
 
 def family(request):
     return render_to_response('m_family.html')
+
+def share(request):
+    return render_to_response('m_share.html')
+
+def me(request):
+    return render_to_response('m_me.html')

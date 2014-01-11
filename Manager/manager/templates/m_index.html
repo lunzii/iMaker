@@ -9,54 +9,32 @@
     <script src="/media/kendoui.complete/js/kendo.all.min.js"></script>
 </head>
 <body>
-    <div data-role="view" id="listview-headers" data-init="mobileListViewHeadersInit" data-title="Fixed Headers">
-    <ul id="fixed-listview"></ul>
-</div>
-
-<script type="text/x-kendo-template" id="listviewHeadersTemplate">
-    <img class="item-photo" src="${url}" />
-    <h3 class="item-title">${name}</h3>
-    <p class="item-info">${description}</p>
-    <a data-role="button" class="details-link">Order</a>
-</script>
-
-<script>
-    var groupedData = [
-        { name: "Sashimi Salad", description: "Organic greens topped with market fresh sashimi, wasabi soy vinaigrette.", url: "/media/kendoui.complete/examples/content/mobile/listview/sashimi-salad.jpg", letter: "S" },
-        { name: "Seaweed Salad", description: "A nice seaweed salad.", url: "/media/kendoui.complete/examples/content/mobile/listview/seaweed-salad.jpg", letter: "S" },
-        { name: "Edamame", description: "Boiled soy beans with salt.", url: "/media/kendoui.complete/examples/content/mobile/listview/edamame.jpg", letter: "E" },
-        { name: "Maguro", description: "Tuna pieces.", url: "/media/kendoui.complete/examples/content/mobile/listview/maguro.jpg", letter: "M" },
-        { name: "Tekka Maki", description: "Tuna roll with wasabi.", url: "/media/kendoui.complete/examples/content/mobile/listview/tekka-maki.jpg", letter: "T" },
-        { name: "California Rolls", description: "Crab sticks, avocado and cucumber.", url: "/media/kendoui.complete/examples/content/mobile/listview/california-rolls.jpg", letter: "C" }
-    ];
-
-    function mobileListViewHeadersInit() {
-        $("#fixed-listview").kendoMobileListView({
-            dataSource: kendo.data.DataSource.create({data: groupedData, group: "letter" }),
-            template: $("#listviewHeadersTemplate").html(),
-            headerTemplate: "${value}",
-            fixedHeaders: true
-        });
-    }
-</script>
+    <div data-role="view" id="listview-headers" data-title="时刻" data-transition="slide">
+        <header data-role="header">
+            <div data-role="navbar">
+                <a id="back-button" class="nav-button" data-align="left" href="#index" data-role="backbutton">精选</a>
+                <span data-role="view-title"></span>
+                <a data-align="right" data-role="button" href="http://www.google.com">选择</a>
+            </div>
+        </header>
+        <ul id="fixed-listview"></ul>
+    </div>
 
 <style scoped>
 .item-photo {
-    width: 4em;
-    height: 4em;
+    width: 79px;
+    height: 79px;
     float: left;
-    margin: .5em 0;
-    border: 1px solid rgba(0,0,0,.2);
-    -webkit-border-radius: 4em;
-    border-radius: 4em;
+    border: 1px solid #FFFFFF;
 }
-
-#fixed-listview .item-title {
-	float: left;
-	font-size: 1em;
-	line-height: 1.4em;
-	margin: 1.3em 1em 0 .6em;
-	width: 50%;
+.item-title-main {
+	font-size: 14px;
+    text-indent: 0em;
+}
+.item-title {
+	font-size: 12px;
+    position: absolute;
+    right: 20px;
 }
 #fixed-listview .item-info {
 	float: left;
@@ -72,12 +50,97 @@
     right: 0.6em;
     top: 50%;
 }
+.km-ios7 .km-listgroup .km-group-title, .km-ios7 .km-listgroupinset .km-group-title {
+    line-height: 2em;
+    border-top: 5px solid #FFFFFF;
+    border-bottom: 0px;
+}
+.km-ios7 .km-group-title {
+{#    text-indent: 0.2em;#}
+    background-color: #FFFFFF;
+}
 .km-listview .km-list {
     margin: 0;
 }
+.km-listview .km-list>li {
+    margin: 0;
+    padding: 0;
+}
+.km-ios7 .km-list>li:last-child {
+    box-shadow: inset 0 -1px 0 #FFFFFF;
+    -webkit-box-shadow: inset 0 -1px 0 #FFFFFF;
+}
 </style>
+
+<script type="text/x-kendo-template" id="body-template">
+    # for (var i = 0; i < data.length; i++) { #
+            <img class="item-photo" src="#: data[i].url #" />
+    # } #
+</script>
+
+<script type="text/x-kendo-template" id="header-template">
+    <a class="item-title-main">#: value #</a>
+    {#    <a class="item-title">#: time #</a>#}
+</script>
+
 <script>
-    var app = new kendo.mobile.Application(document.body,{skin:"flat"});
+    var groupedData = [
+        {
+            name: "Sashimi",
+            data:[
+                {md5:"xxxx",username:"olunxchen",url:"/media/kendoui.complete/examples/content/mobile/listview/sashimi-salad.jpg",time:"xxx"},
+                {md5:"xxxx",url:"/media/kendoui.complete/examples/content/mobile/listview/sashimi-salad.jpg",time:"xxx"},
+                {md5:"xxxx",url:"/media/kendoui.complete/examples/content/mobile/listview/sashimi-salad.jpg",time:"xxx"},
+                {md5:"xxxx",url:"/media/kendoui.complete/examples/content/mobile/listview/sashimi-salad.jpg",time:"xxx"},
+                {md5:"xxxx",url:"/media/kendoui.complete/examples/content/mobile/listview/sashimi-salad.jpg",time:"xxx"},
+                {md5:"xxxx",url:"/media/kendoui.complete/examples/content/mobile/listview/sashimi-salad.jpg",time:"xxx"},
+                {md5:"xxxx",url:"/media/kendoui.complete/examples/content/mobile/listview/sashimi-salad.jpg",time:"xxx"},
+                {md5:"xxxx",url:"/media/kendoui.complete/examples/content/mobile/listview/sashimi-salad.jpg",time:"xxx"},
+                {md5:"xxxx",url:"/media/kendoui.complete/examples/content/mobile/listview/sashimi-salad.jpg",time:"xxx"}
+            ]
+        },
+        {
+            name: "Edamame",
+            data:[
+                {md5:"xxxx",url:"/media/kendoui.complete/examples/content/mobile/listview/sashimi-salad.jpg",time:"xxx"}
+            ] },
+        {
+            name: "Maguro",
+            data:[
+                {md5:"xxxx",url:"/media/kendoui.complete/examples/content/mobile/listview/sashimi-salad.jpg",time:"xxx"}
+            ]
+        },
+        {
+            name: "Tekka",
+            data:[
+                {md5:"xxxx",url:"/media/kendoui.complete/examples/content/mobile/listview/sashimi-salad.jpg",time:"xxx"}
+            ]
+        },
+        {
+            name: "California",
+            data:[
+                {md5:"xxxx",url:"/media/kendoui.complete/examples/content/mobile/listview/sashimi-salad.jpg",time:"xxx"}
+            ]
+        }
+    ];
+
+    function mobileListViewHeadersInit() {
+        $("#fixed-listview").kendoMobileListView({
+            dataSource: kendo.data.DataSource.create({data: groupedData, group: {field:"name"} }),
+            template: $("#body-template").html(),
+            headerTemplate: $("#header-template").html(),
+            fixedHeaders: true
+        });
+    }
+
+    $(document).ready(function(){
+        mobileListViewHeadersInit();
+    });
+</script>
+
+<script>
+    var app = new kendo.mobile.Application(document.body);
+{#    var app = new kendo.mobile.Application(document.body,{skin:"flat"});#}
 </script>
 </body>
 </html>

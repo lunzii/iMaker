@@ -21,7 +21,7 @@ urlpatterns = patterns('',
 
     # --------------------health-----------------------
     # url(r'^index/', views.index),
-    #url(r'^$', views.index),
+    url(r'^$', views.index),
     #url(r'^index/', TemplateView.as_view(template_name='base.html')),
     #url(r'^insert_data_video/', views.insert_data_video),
     #url(r'^insert_data_photo/', views.insert_data_video),
@@ -57,6 +57,8 @@ urlpatterns = patterns('',
     #--------------------
     url(r'^m/$', mobile.index),
     url(r'^m_family/$', mobile.family),
+    url(r'^m_share/$', mobile.share),
+    url(r'^m_me/$', mobile.me),
 
 
     #静态文件资源路径
