@@ -56,6 +56,7 @@ urlpatterns = patterns('',
 
     #--------------------
     url(r'^m/$', mobile.index),
+    url(r'^m_family/$', mobile.family),
 
 
     #静态文件资源路径

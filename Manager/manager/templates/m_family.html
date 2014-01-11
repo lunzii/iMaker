@@ -9,7 +9,7 @@
     <script src="/media/kendoui.complete/js/kendo.all.min.js"></script>
 </head>
 <body>
-    <div data-role="view" id="listview-headers" data-init="mobileListViewHeadersInit" data-title="Fixed Headers">
+    <div data-role="view" id="listview-headers" data-init="mobileListViewHeadersInit" data-title="相簿">
     <ul id="fixed-listview"></ul>
 </div>
 
@@ -17,17 +17,14 @@
     <img class="item-photo" src="${url}" />
     <h3 class="item-title">${name}</h3>
     <p class="item-info">${description}</p>
-    <a data-role="button" class="details-link">Order</a>
+    <a data-role="button" class="details-link">查看</a>
 </script>
 
 <script>
     var groupedData = [
-        { name: "Sashimi Salad", description: "Organic greens topped with market fresh sashimi, wasabi soy vinaigrette.", url: "/media/kendoui.complete/examples/content/mobile/listview/sashimi-salad.jpg", letter: "S" },
-        { name: "Seaweed Salad", description: "A nice seaweed salad.", url: "/media/kendoui.complete/examples/content/mobile/listview/seaweed-salad.jpg", letter: "S" },
-        { name: "Edamame", description: "Boiled soy beans with salt.", url: "/media/kendoui.complete/examples/content/mobile/listview/edamame.jpg", letter: "E" },
-        { name: "Maguro", description: "Tuna pieces.", url: "/media/kendoui.complete/examples/content/mobile/listview/maguro.jpg", letter: "M" },
-        { name: "Tekka Maki", description: "Tuna roll with wasabi.", url: "/media/kendoui.complete/examples/content/mobile/listview/tekka-maki.jpg", letter: "T" },
-        { name: "California Rolls", description: "Crab sticks, avocado and cucumber.", url: "/media/kendoui.complete/examples/content/mobile/listview/california-rolls.jpg", letter: "C" }
+        { name: "olunxchen", description: "我的照片我做主", url: "/media/kendoui.complete/examples/content/mobile/listview/sashimi-salad.jpg", letter: "O" },
+        { name: "vincentshen", description: "努力学习好好向上", url: "/media/kendoui.complete/examples/content/mobile/listview/edamame.jpg", letter: "V" },
+        { name: "yijunli", description: "天天都有好心情", url: "/media/kendoui.complete/examples/content/mobile/listview/seaweed-salad.jpg", letter: "Y" }
     ];
 
     function mobileListViewHeadersInit() {
