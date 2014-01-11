@@ -24,6 +24,8 @@
 		AE3EE8A8188116DA0084FD4D /* iMageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3EE8A7188116DA0084FD4D /* iMageTests.m */; };
 		AE3EE8B318811BA60084FD4D /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3EE8B218811BA60084FD4D /* ThirdViewController.m */; };
 		AE3EE8B618811CB10084FD4D /* FourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3EE8B518811CB10084FD4D /* FourViewController.m */; };
+		AE3EE8BF18817E1E0084FD4D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE3EE8BD18817E1E0084FD4D /* Default-568h@2x.png */; };
+		AE3EE8C018817E1E0084FD4D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE3EE8BE18817E1E0084FD4D /* Default@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		AE3EE8B218811BA60084FD4D /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
 		AE3EE8B418811CB10084FD4D /* FourViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourViewController.h; sourceTree = "<group>"; };
 		AE3EE8B518811CB10084FD4D /* FourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourViewController.m; sourceTree = "<group>"; };
+		AE3EE8BD18817E1E0084FD4D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		AE3EE8BE18817E1E0084FD4D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +145,8 @@
 		AE3EE880188116DA0084FD4D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AE3EE8BD18817E1E0084FD4D /* Default-568h@2x.png */,
+				AE3EE8BE18817E1E0084FD4D /* Default@2x.png */,
 				AE3EE881188116DA0084FD4D /* iMage-Info.plist */,
 				AE3EE882188116DA0084FD4D /* InfoPlist.strings */,
 				AE3EE885188116DA0084FD4D /* main.m */,
@@ -244,6 +250,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE3EE895188116DA0084FD4D /* Images.xcassets in Resources */,
+				AE3EE8BF18817E1E0084FD4D /* Default-568h@2x.png in Resources */,
+				AE3EE8C018817E1E0084FD4D /* Default@2x.png in Resources */,
 				AE3EE884188116DA0084FD4D /* InfoPlist.strings in Resources */,
 				AE3EE88D188116DA0084FD4D /* Main.storyboard in Resources */,
 			);
@@ -399,7 +407,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iMage/iMage-Prefix.pch";
 				INFOPLIST_FILE = "iMage/iMage-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -412,7 +422,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iMage/iMage-Prefix.pch";
 				INFOPLIST_FILE = "iMage/iMage-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

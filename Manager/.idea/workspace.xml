@@ -23,37 +23,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="m_index.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="m_index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/manager/templates/m_index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="0" selection-start="1462" selection-end="1630" vertical-scroll-proportion="-10.166667" vertical-offset="536" max-vertical-offset="2265">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="m_me.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/manager/templates/m_me.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="78" column="18" selection-start="2553" selection-end="2553" vertical-scroll-proportion="0.8504983" vertical-offset="658" max-vertical-offset="1410">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="m_share.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/manager/templates/m_share.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="18" selection-start="1787" selection-end="1787" vertical-scroll-proportion="-11.25" vertical-offset="540" max-vertical-offset="1590">
+            <state line="140" column="16" selection-start="4901" selection-end="4901" vertical-scroll-proportion="0.8504983" vertical-offset="1588" max-vertical-offset="2370">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/manager/media/kendoui.complete/examples/mobile/listview/index.html">
+        <entry file="file://$PROJECT_DIR$/manager/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="97" column="13" selection-start="1903" selection-end="3077" vertical-scroll-proportion="-19.458334" vertical-offset="988" max-vertical-offset="1590">
+            <state line="103" column="8" selection-start="2888" selection-end="3070" vertical-scroll-proportion="-15.083333" vertical-offset="1183" max-vertical-offset="1785">
               <folding />
             </state>
           </provider>
@@ -82,9 +64,9 @@
         <option value="$PROJECT_DIR$/manager/urls.py" />
         <option value="$PROJECT_DIR$/manager/mobile/views.py" />
         <option value="$PROJECT_DIR$/manager/templates/m_family.html" />
-        <option value="$PROJECT_DIR$/manager/templates/m_index.html" />
         <option value="$PROJECT_DIR$/manager/templates/m_share.html" />
         <option value="$PROJECT_DIR$/manager/templates/m_me.html" />
+        <option value="$PROJECT_DIR$/manager/templates/m_index.html" />
       </list>
     </option>
   </component>
@@ -166,72 +148,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HealthManager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Manager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="media" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HealthManager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Manager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="media" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kendoui.complete" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HealthManager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Manager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="media" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kendoui.complete" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="styles" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -548,7 +464,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32874617" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959481" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27633712" sideWeight="0.6666667" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27633712" sideWeight="0.6666667" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -580,7 +496,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27633712" sideWeight="0.6666667" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33333334" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33333334" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -634,15 +550,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="4" selection-start="436" selection-end="436" vertical-scroll-proportion="-8.341853" vertical-offset="5462" max-vertical-offset="10185">
           <folding>
-            <element signature="e#60#76#0" expanded="true" />
+            <element signature="e#60#76#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manager/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.9651163" vertical-offset="1183" max-vertical-offset="1785">
-          <folding />
         </state>
       </provider>
     </entry>
@@ -683,28 +592,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/manager/media/kendoui.complete/examples/mobile/listview/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="97" column="13" selection-start="1903" selection-end="3077" vertical-scroll-proportion="-19.458334" vertical-offset="988" max-vertical-offset="1590">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manager/templates/m_index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="0" selection-start="1462" selection-end="1630" vertical-scroll-proportion="-10.166667" vertical-offset="536" max-vertical-offset="2265">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manager/templates/m_share.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="18" selection-start="1787" selection-end="1787" vertical-scroll-proportion="-11.25" vertical-offset="540" max-vertical-offset="1590">
+        <state line="97" column="13" selection-start="1903" selection-end="3077" vertical-scroll-proportion="0.77574754" vertical-offset="988" max-vertical-offset="1590">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/manager/templates/m_me.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="18" selection-start="2553" selection-end="2553" vertical-scroll-proportion="0.8504983" vertical-offset="658" max-vertical-offset="1410">
+        <state line="78" column="18" selection-start="2553" selection-end="2553" vertical-scroll-proportion="-21.333334" vertical-offset="658" max-vertical-offset="1410">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manager/templates/m_share.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="18" selection-start="1787" selection-end="1787" vertical-scroll-proportion="0.45840406" vertical-offset="540" max-vertical-offset="1590">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manager/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="103" column="8" selection-start="2888" selection-end="3070" vertical-scroll-proportion="-15.083333" vertical-offset="1183" max-vertical-offset="1785">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manager/templates/m_index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="140" column="16" selection-start="4901" selection-end="4901" vertical-scroll-proportion="0.8504983" vertical-offset="1588" max-vertical-offset="2370">
           <folding />
         </state>
       </provider>

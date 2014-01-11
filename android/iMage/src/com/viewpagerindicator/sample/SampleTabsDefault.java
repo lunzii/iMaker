@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,6 +15,8 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import com.viewpagerindicator.TabPageIndicator;
 
+import java.io.File;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -70,6 +73,7 @@ public class SampleTabsDefault extends FragmentActivity {
           return CONTENT.length;
         }
     }
+
 
 //    @Override
 //    public boolean onCreateOptionsMenu(Menu menu) {
