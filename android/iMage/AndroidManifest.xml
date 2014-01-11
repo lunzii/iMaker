@@ -5,16 +5,25 @@
     android:versionName="2.4.1">
 
     <uses-sdk
-        android:minSdkVersion="4"
+        android:minSdkVersion="8"
         android:targetSdkVersion="16" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
 
     <application
         android:label="iMage"
         android:icon="@drawable/icon">
 
         <activity
-            android:name=".ListSamples"
-            android:label="ViewPager Indicator"
+            android:name=".SampleTabsDefault"
             android:theme="@style/Theme.PageIndicatorDefaults">
 
             <intent-filter>
@@ -22,17 +31,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
-      <activity
-          android:name=".SampleTabsWithIcons"
-          android:label="Tabs/With Icons"
-          android:theme="@style/StyledIndicators">
-        <intent-filter>
-          <action android:name="android.intent.action.MAIN" />
-          <category android:name="com.jakewharton.android.viewpagerindicator.sample.SAMPLE" />
-        </intent-filter>
-      </activity>
 
     </application>
 </manifest>

@@ -1,11 +1,15 @@
 package com.viewpagerindicator.sample;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebChromeClient;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
@@ -16,12 +20,7 @@ public final class TestFragment extends Fragment {
     public static TestFragment newInstance(String content) {
         TestFragment fragment = new TestFragment();
 
-        StringBuilder builder = new StringBuilder();
-        for (int i = 0; i < 20; i++) {
-            builder.append(content).append(" ");
-        }
-        builder.deleteCharAt(builder.length() - 1);
-        fragment.mContent = builder.toString();
+        fragment.mContent = content;
 
         return fragment;
     }
@@ -45,10 +44,32 @@ public final class TestFragment extends Fragment {
         text.setTextSize(20 * getResources().getDisplayMetrics().density);
         text.setPadding(20, 20, 20, 20);
 
+        WebView webView = new WebView(getActivity());
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.getSettings().setAppCacheEnabled(false);
+        webView.setScrollBarStyle(0);
+        webView.setWebViewClient(new WebViewClient() {
+            public boolean shouldOverrideUrlLoading(final WebView view, final String url) {
+                view.loadUrl(url);
+                return true;
+            }
+
+        });
+        webView.setWebChromeClient(new WebChromeClient() {
+            public void onProgressChanged(WebView view, int progress) {
+                super.onProgressChanged(view, progress);
+            }
+        });
+        webView.loadUrl(mContent);
+        webView.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
+        webView.setBackgroundColor(Color.BLACK);
+
+
         LinearLayout layout = new LinearLayout(getActivity());
-        layout.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT));
-        layout.setGravity(Gravity.CENTER);
-        layout.addView(text);
+        layout.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
+//        layout.setGravity(Gravity.CENTER);
+        layout.addView(webView);
+//        layout.addView(text);
 
         return layout;
     }
