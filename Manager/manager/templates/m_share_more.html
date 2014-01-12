@@ -9,12 +9,12 @@
     <script src="/media/kendoui.complete/js/kendo.all.min.js"></script>
 </head>
 <body>
-    <div data-role="view" id="listview-headers" data-title="时刻" data-transition="slide">
+    <div data-role="view" id="listview-headers" data-title="分享" data-transition="slide">
         <header data-role="header">
             <div data-role="navbar">
-                <a id="back-button" class="nav-button" data-align="left" href="" data-role="backbutton">精选</a>
+                <a class="nav-button" data-align="left" href="/m_share/" data-rel="external" data-role="backbutton">返回</a>
                 <span data-role="view-title"></span>
-                <a data-align="right" data-role="button" href="">选择</a>
+{#                <a data-align="right" data-role="button" href="">选择</a>#}
             </div>
         </header>
         <ul id="fixed-listview"></ul>
@@ -95,6 +95,11 @@
             fixedHeaders: true
         });
     }
+
+    $("body").on("click",'a[data-rel="external"]', function(e) {
+        e.preventDefault();
+        window.location.href = $(this).attr("href");
+    });
 
     $(document).ready(function(){
         mobileListViewHeadersInit();

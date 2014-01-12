@@ -7,7 +7,7 @@ import settings
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
-from manager.core import views, BoxInterface as bi_views, AppInterface as ai_views
+from manager.core import BoxInterface as bi_views, AppInterface as ai_views
 from manager.mobile import views as mobile
 
 admin.autodiscover()
@@ -26,19 +26,16 @@ urlpatterns = patterns('',
     url(r'^get_pic_info/', ai_views.get_pic_info),
     url(r'^delete_pic_info/', ai_views.delete_pic_info),
 
-<<<<<<< HEAD
-=======
     #--------------------
     url(r'^m/$', mobile.index),
     url(r'^m_family/$', mobile.family),
+    url(r'^m_family_more/$', mobile.family_more),
     url(r'^m_share/$', mobile.share),
+    url(r'^m_share_more/$', mobile.share_more),
     url(r'^m_me/$', mobile.me),
-
->>>>>>> ios
 
     #静态文件资源路径
     url(r'^%s/(?P<path>.*)$' % settings.STATIC_URL.replace('/',''), 'django.views.static.serve', {'document_root':settings.STATIC_ROOT}),
     url(r'^%s/(?P<path>.*)$' % settings.MEDIA_URL.replace('/',''), 'django.views.static.serve', {'document_root':settings.MEDIA_ROOT}),
     url(r'^%s/(?P<path>.*)$' % settings.RES_URL.replace('/',''), 'django.views.static.serve', {'document_root':settings.RES_ROOT}),
-
-)
+    )

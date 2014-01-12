@@ -58,7 +58,7 @@
 </style>
 
 <script type="text/x-kendo-template" id="body-template">
-    <a href="">
+    <a href="/m_share_more/?user_name=#: username #&time=2014-11-1" data-rel="external">
         <span class="item-image" style="background-image: url(' #: url # ')"></span>
         <h3> #: time # </h3>
         <p class="item-info">${description}</p>
@@ -71,23 +71,27 @@
 
 <script>
     var groupedData = [
-        { name: "vincentshen", time: "2013年11月26日", description: "深圳市南山区大梅沙", url: "/media/kendoui.complete/examples/content/mobile/listview/sashimi-salad.jpg"},
-        { name: "vincentshen", time: "2013年11月26日", description: "深圳市南山区大梅沙", url: "/media/kendoui.complete/examples/content/mobile/listview/seaweed-salad.jpg"},
-        { name: "yijunli", time: "2013年11月26日", description: "深圳市南山区大梅沙", url: "/media/kendoui.complete/examples/content/mobile/listview/edamame.jpg"},
-        { name: "Maguro", time: "2013年11月26日", description: "深圳市南山区大梅沙", url: "/media/kendoui.complete/examples/content/mobile/listview/maguro.jpg"},
-        { name: "Tekka Maki", time: "2013年11月26日", description: "深圳市南山区大梅沙", url: "/media/kendoui.complete/examples/content/mobile/listview/tekka-maki.jpg"},
-        { name: "yijunli", time: "2013年11月26日", description: "深圳市南山区大梅沙", url: "/media/kendoui.complete/examples/content/mobile/listview/california-rolls.jpg"}
+        { username: "vincentshen", time: "2013年7月26日", description: "深圳市龙岗区大梅沙", url: "/media/kendoui.complete/examples/content/mobile/listview/sashimi-salad.jpg"},
+        { username: "vincentshen", time: "2013年11月26日", description: "深圳市南山区桂庙", url: "/media/kendoui.complete/examples/content/mobile/listview/seaweed-salad.jpg"},
+        { username: "yijunli", time: "2013年1月26日", description: "深圳市南山区荔香公园", url: "/media/kendoui.complete/examples/content/mobile/listview/edamame.jpg"},
+        { username: "yijunli", time: "2013年2月26日", description: "深圳市南山区愉康", url: "/media/kendoui.complete/examples/content/mobile/listview/maguro.jpg"},
+        { username: "yijunli", time: "2013年5月23日", description: "深圳市南山区桃源村", url: "/media/kendoui.complete/examples/content/mobile/listview/tekka-maki.jpg"},
+        { username: "yijunli", time: "2013年11月26日", description: "深圳市南山区科技中一路", url: "/media/kendoui.complete/examples/content/mobile/listview/california-rolls.jpg"}
     ];
 
     function mobileListViewHeadersInit() {
         $("#fixed-listview").kendoMobileListView({
-            dataSource: kendo.data.DataSource.create({data: groupedData, group: {field:"name"} }),
+            dataSource: kendo.data.DataSource.create({data: groupedData, group: {field:"username"} }),
             template: $("#body-template").html(),
             headerTemplate: $("#header-template").html(),
             fixedHeaders: true
         });
     }
 
+    $("body").on("click",'a[data-rel="external"]', function(e) {
+        e.preventDefault();
+        window.location.href = $(this).attr("href");
+    });
     $(document).ready(function(){
         mobileListViewHeadersInit();
     });
