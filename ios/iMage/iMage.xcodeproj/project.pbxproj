@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE1E413718822F0900AD475E /* Icon@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE1E413518822F0900AD475E /* Icon@1x.png */; };
+		AE1E413818822F0900AD475E /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE1E413618822F0900AD475E /* Icon@2x.png */; };
 		AE3EE87A188116DA0084FD4D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3EE879188116DA0084FD4D /* Foundation.framework */; };
 		AE3EE87C188116DA0084FD4D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3EE87B188116DA0084FD4D /* CoreGraphics.framework */; };
 		AE3EE87E188116DA0084FD4D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3EE87D188116DA0084FD4D /* UIKit.framework */; };
@@ -39,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AE1E413518822F0900AD475E /* Icon@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@1x.png"; sourceTree = "<group>"; };
+		AE1E413618822F0900AD475E /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		AE3EE876188116DA0084FD4D /* iMage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE3EE879188116DA0084FD4D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AE3EE87B188116DA0084FD4D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -145,6 +149,8 @@
 		AE3EE880188116DA0084FD4D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AE1E413518822F0900AD475E /* Icon@1x.png */,
+				AE1E413618822F0900AD475E /* Icon@2x.png */,
 				AE3EE8BD18817E1E0084FD4D /* Default-568h@2x.png */,
 				AE3EE8BE18817E1E0084FD4D /* Default@2x.png */,
 				AE3EE881188116DA0084FD4D /* iMage-Info.plist */,
@@ -251,8 +257,10 @@
 			files = (
 				AE3EE895188116DA0084FD4D /* Images.xcassets in Resources */,
 				AE3EE8BF18817E1E0084FD4D /* Default-568h@2x.png in Resources */,
+				AE1E413818822F0900AD475E /* Icon@2x.png in Resources */,
 				AE3EE8C018817E1E0084FD4D /* Default@2x.png in Resources */,
 				AE3EE884188116DA0084FD4D /* InfoPlist.strings in Resources */,
+				AE1E413718822F0900AD475E /* Icon@1x.png in Resources */,
 				AE3EE88D188116DA0084FD4D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

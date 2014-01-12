@@ -19,7 +19,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 20, 320, 500)];
-    NSURLRequest *request =[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://192.168.1.177:8080/m_me/"]];
+    NSURLRequest *request =[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://192.168.1.108:7788/m_me/"]];
     [self.view addSubview: webView];
     [webView loadRequest:request];
 }
